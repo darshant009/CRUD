@@ -1,6 +1,12 @@
 # Use a base image with Java 17
 FROM adoptopenjdk:17-jdk-hotspot
 
+# Set the working directory in the image
+WORKDIR /usr/src/app
+
+# Copy the Maven project's pom.xml to the container
+COPY . .
+
 # Set the Tomcat version
 ENV TOMCAT_VERSION 10.1.19
 
